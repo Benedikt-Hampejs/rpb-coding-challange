@@ -1,28 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <OfferCards :offers="data" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import OfferCards from './components/OfferCards.vue'
+
+import data from './data/data.js'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    OfferCards,
+  },
+  data () {
+    return {
+      data: data
+    }
   }
 }
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding-left: 10px;
+
 }
+body{
+  margin: auto;
+  font-family: Open Sans;
+}
+
 </style>
